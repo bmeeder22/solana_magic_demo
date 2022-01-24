@@ -6,7 +6,7 @@ import * as web3 from "@solana/web3.js";
 
 const rpcUrl = 'https://api.devnet.solana.com';
 
-export const magic = new Magic('pk_live_19EA833CD6BEB4E4', {
+export const magic = new Magic('', {
     extensions: [
         new SolanaExtension({
             rpcUrl,
@@ -15,7 +15,7 @@ export const magic = new Magic('pk_live_19EA833CD6BEB4E4', {
 });
 
 export default function App() {
-  const [destinationAddress, setDestinationAddress] = useState('BDbksKYryFU4qf6DyHRTQwB9S8R2uYQbWJ2WRY1yAVYZ');
+  const [destinationAddress, setDestinationAddress] = useState('');
   const [address, setAddress] = useState('');
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function App() {
         />
         <Button
             onPress={() => {
-                console.log('AHHHH');
+                console.log('Pressed');
                 onSend();
             }}
             title="Send SOL"
